@@ -1,0 +1,123 @@
+/* Kanban Board Responsive Styling */
+
+.kanban-board {
+  padding: 1rem 0;
+}
+
+.kanban-column {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #dee2e6;
+  transition: box-shadow 0.3s ease;
+}
+
+.kanban-column:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #dee2e6;
+}
+
+.column-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212529;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.column-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.column-count {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.35rem 0.65rem;
+}
+
+.column-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 2rem;
+  text-align: center;
+  color: #6c757d;
+  border: 2px dashed #dee2e6;
+  border-radius: 6px;
+}
+
+.empty-state-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Column-specific background colors */
+.column-todo {
+  background-color: #f8f9fa;
+}
+
+.column-inprogress {
+  background-color: #e7f3ff;
+}
+
+.column-done {
+  background-color: #f0f0f0;
+}
+
+/* Responsive behavior - Stack columns on small screens */
+@media (max-width: 991px) {
+  .kanban-column {
+    margin-bottom: 1.5rem;
+    min-height: auto;
+  }
+
+  .row > .col-lg-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Smooth transitions for responsive adjustments */
+@media (max-width: 576px) {
+  .column-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .column-title {
+    width: 100%;
+  }
+
+  .kanban-column {
+    padding: 1rem 0.75rem;
+  }
+}
