@@ -31,7 +31,12 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- Code quality gate: planned implementation keeps logic clean, efficient, and avoids unnecessary
+  complexity.
+- Dependency gate: any new dependency is explicitly justified and minimal.
+- Stack gate: frontend work remains compatible with React 19 and Bootstrap baseline.
+- UX gate: plan defines simple interaction flows, responsive behavior, and light-theme UI direction.
+- Process gate: design and content phases do not require test execution as a blocking condition.
 
 ## Project Structure
 

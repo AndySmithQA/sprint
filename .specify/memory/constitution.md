@@ -1,50 +1,93 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version change: template -> 1.0.0
+- Modified principles:
+	- Principle 1 placeholder -> I. Clean and Efficient Code
+	- Principle 2 placeholder -> II. Minimal Dependency Surface
+	- Principle 3 placeholder -> III. React 19 and Bootstrap Baseline
+	- Principle 4 placeholder -> IV. Simple, Responsive, Light UI
+	- Principle 5 placeholder -> V. Design-Phase Content First, Testing Deferred
+- Added sections:
+	- Technical Standards
+	- Workflow and Delivery Rules
+- Removed sections:
+	- None
+- Templates requiring updates:
+	- .specify/templates/constitution-template.md: ✅ updated
+	- .specify/templates/plan-template.md: ✅ updated
+	- .specify/templates/spec-template.md: ✅ updated
+	- .specify/templates/tasks-template.md: ✅ updated
+	- .specify/templates/commands/*.md: ⚠ pending (directory not present in repository)
+	- .github/agents/speckit.specify.agent.md: ✅ updated
+	- .github/agents/speckit.tasks.agent.md: ✅ updated
+	- .github/agents/speckit.implement.agent.md: ✅ updated
+- Deferred TODOs:
+	- None
+-->
+
+# Sprint Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Clean and Efficient Code
+All delivered code MUST be readable, maintainable, and efficient for its intended use.
+Implementations MUST avoid unnecessary complexity, dead code, and speculative abstractions.
+Contributors MUST prefer clear naming, small cohesive units, and straightforward control flow.
+Rationale: clear and efficient code reduces defects, onboarding time, and maintenance cost.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Minimal Dependency Surface
+The project MUST keep runtime and build dependencies to the minimum needed for feature delivery.
+Any added dependency MUST have a direct, justified benefit that cannot be met with existing tools.
+Dependency duplication and overlapping libraries MUST be avoided.
+Rationale: fewer dependencies improve reliability, security posture, and bundle performance.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. React 19 and Bootstrap Baseline
+Frontend implementation MUST target React 19 and Bootstrap as the default UI framework baseline.
+Architecture and component choices MUST remain compatible with this stack unless a constitution
+amendment explicitly approves a change.
+Rationale: a stable, shared stack keeps delivery consistent and reduces integration risk.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Simple, Responsive, Light UI
+User experience MUST be clear, simple, and responsive across common mobile and desktop breakpoints.
+All new UI surfaces MUST follow a light visual theme and avoid dark-theme defaults unless explicitly
+requested for a specific feature.
+Rationale: simple and responsive interfaces reduce user friction and improve accessibility.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Design-Phase Content First, Testing Deferred
+During specification and design phases, testing tasks MUST NOT be required gates.
+Testing is a post-content activity and MAY be planned only after content and design artifacts are
+complete.
+If any template or command guidance conflicts with this rule, this principle takes precedence.
+Rationale: design throughput is prioritized before formal validation activities.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Technical Standards
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- Language and framework choices for frontend work MUST remain TypeScript + React 19 + Bootstrap
+	unless amended.
+- UX deliverables MUST include responsive behavior and simple interaction flows as acceptance criteria.
+- New libraries MUST be assessed for necessity, maintenance quality, and compatibility before adoption.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Workflow and Delivery Rules
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- Plans and tasks MUST include a constitution alignment check before implementation begins.
+- Design deliverables MUST prioritize content completeness and UI clarity over pre-implementation
+	test execution.
+- Post-content validation SHOULD include focused testing and review before release.
+- Pull requests MUST document any dependency additions and justify their necessity.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution overrides conflicting workflow guidance in templates and agent command files.
+Amendments require: (1) a proposed change with rationale, (2) update of dependent templates and
+agent guidance, and (3) approval by project maintainers.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Versioning policy for this constitution follows semantic versioning:
+- MAJOR: incompatible governance changes or principle removals/redefinitions.
+- MINOR: new principle or materially expanded mandatory guidance.
+- PATCH: clarifications and non-semantic wording improvements.
+
+Compliance review expectations:
+- Every planning artifact MUST pass a constitution alignment check.
+- Every implementation pull request MUST confirm dependency and UX compliance with this document.
+
+**Version**: 1.0.0 | **Ratified**: 2026-03-12 | **Last Amended**: 2026-03-12
